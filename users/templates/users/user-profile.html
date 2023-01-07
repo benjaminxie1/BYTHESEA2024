@@ -12,39 +12,11 @@
                         <img class="avatar avatar--xl" src="{{ profile.imageURL }}" />
                         <h2 class="dev__name">{{profile.name}}</h2>
                         <p class="dev__title">{{profile.short_intro}}</p>
-                        <p class="dev__location">Based in {{profile.location}}</p>
-                        <ul class="dev__social">
+                        <p class="dev__location">Living in {{profile.location}}</p>
 
-                            {% if profile.social_github %}
-                            <li>
-                                <a title="Github" href="{{profile.social_github}}" target="_blank"><i
-                                        class="im im-github"></i></a>
-                            </li>
-                            {% endif %}
+                        <p class = "dream_university">Dream School: {{ profile.dream_school }}</p>
+                        <p class = "intended major">Dream Major: {{ profile.major }}</p>
 
-
-                            {% if profile.social_twitter %}
-                            <li>
-                                <a title="Twitter" href="{{profile.social_twitter}}" target="_blank"><i
-                                        class="im im-twitter"></i></a>
-                            </li>
-                            {% endif %}
-
-                            {% if profile.social_linkedin %}
-                            <li>
-                                <a title="LinkedIn" href="{{profile.social_linkedin}}" target="_blank"><i
-                                        class="im im-linkedin"></i></a>
-                            </li>
-                            {% endif %}
-
-                            {% if profile.social_website %}
-                            <li>
-                                <a title="Personal Website" href="{{profile.social_website}}" target="_blank"><i
-                                        class="im im-globe"></i></a>
-                            </li>
-                            {% endif %}
-
-                        </ul>
                         {% if request.user.profile.id != profile.id %}
                         <a href="{% url 'create-message' profile.id %}" class="btn btn--sub btn--lg">Send Message </a>
                         {% endif %}
