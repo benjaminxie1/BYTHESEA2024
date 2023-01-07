@@ -1,0 +1,7 @@
+.venv/*
+*/__pycache__/*
+projects/migrations/__pycache__/*.pyc
+users/migrations/__pycache__/*
+.idea/*
+db.sqlite3
+app-messages
