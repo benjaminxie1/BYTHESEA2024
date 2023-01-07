@@ -14,19 +14,15 @@
             <img class="avatar avatar--xl dev__avatar" src="{{profile.imageURL}}" />
             <h2 class="dev__name">{{profile.name}}</h2>
             <p class="dev__title">{{profile.short_into}}</p>
-            <p class="dev__location">Based in {{profile.location}}</p>
-
+            <p class="dev__location">Living in {{profile.location}}</p>
+              <p class = "dream_university"> Dream University: {{ profile.dream_school }}</p>
+           <p class="Intended Major"> Intended Major: {{ profile.major }}
             <ul class="dev__social">
-              {% if profile.social_github %}
-              <li>
-                <a title="Github" href="{{profile.social_github}}" target="_blank"><i class="im im-github"></i></a>
-              </li>
-              {% endif %}
 
 
-              {% if profile.social_twitter %}
+              {% if profile.major%}
               <li>
-                <a title="Twitter" href="{{profile.social_twitter}}" target="_blank"><i class="im im-twitter"></i></a>
+                <a title="Intended Major" href="{{profile.major}}" target="_blank"><i class="im im-twitter"></i></a>
               </li>
               {% endif %}
 
