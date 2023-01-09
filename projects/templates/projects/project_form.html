@@ -16,9 +16,16 @@
                 {% for field in form %}
                 <!-- Input:Text -->
                 <div class="form__field">
+                {% if field == form.Activity_List or field == form.Award_List %}
+                        <label for="formInput#text">{{field.label}}</label>
+                      <textarea for="formInput#text"{{ field }} </textarea>
+
+                    {% else %}
+
                     <label for="formInput#text">{{field.label}}</label>
                     {{field}}
                 </div>
+                    {% endif %}
                 {% endfor %}
 
                 <div class="form__field">

@@ -1,5 +1,5 @@
 """
-ASGI config for devsearch project.
+ASGI config for PeerReview project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 

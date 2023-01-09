@@ -11,11 +11,13 @@
                     <div class="card__body dev">
                         <img class="avatar avatar--xl" src="{{ profile.imageURL }}" />
                         <h2 class="dev__name">{{profile.name}}</h2>
+                        <P class = "dev__username">{{ profile.username }}</P>
                         <p class="dev__title">{{profile.short_intro}}</p>
+
                         <p class="dev__location">Living in {{profile.location}}</p>
 
-                        <p class = "dream_university">Dream School: {{ profile.dream_school }}</p>
-                        <p class = "intended major">Dream Major: {{ profile.major }}</p>
+                        <p class = "dream_university">Dream School: {{ profile.dream_School }}</p>
+                        <p class = "intended major">Dream Major: {{ profile.intended_Major }}</p>
 
                         {% if request.user.profile.id != profile.id %}
                         <a href="{% url 'create-message' profile.id %}" class="btn btn--sub btn--lg">Send Message </a>
@@ -29,7 +31,7 @@
                     <p class="devInfo__about">{{profile.bio}}</p>
                 </div>
                 <div class="devInfo">
-                    <h3 class="devInfo__title">Skills</h3>
+                    <h3 class="devInfo__title">Interests</h3>
                     <div class="devInfo__skills">
 
                         {% for skill in topSkills %}
@@ -41,7 +43,7 @@
 
 
 
-                        <h3 class="devInfo__subtitle">Other Skills</h3>
+                        <h3 class="devInfo__subtitle">Other Interests</h3>
                         <div class="devInfo__otherSkills">
 
                             {% for skill in otherSkills %}
@@ -54,7 +56,7 @@
                     </div>
                 </div>
                 <div class="devInfo">
-                    <h3 class="devInfo__title">Projects</h3>
+                    <h3 class="devInfo__title">Posts</h3>
                     <div class="grid grid--two">
                         {% for project in profile.project_set.all %}
                         <div class="column">

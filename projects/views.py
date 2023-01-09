@@ -42,7 +42,7 @@ def createProject(request):
     form = ProjectForm()
 
     if request.method == 'POST':
-        newtags = request.POST.get('newtags').replace(',',  " ").split()
+        newtags = request.POST.get('newtags').replace(',', " ").split()
         form = ProjectForm(request.POST, request.FILES)
         if form.is_valid():
             project = form.save(commit=False)
@@ -65,7 +65,7 @@ def updateProject(request, pk):
     form = ProjectForm(instance=project)
 
     if request.method == 'POST':
-        newtags = request.POST.get('newtags').replace(',',  " ").split()
+        newtags = request.POST.get('newtags').replace(',', " ").split()
 
         form = ProjectForm(request.POST, request.FILES, instance=project)
         if form.is_valid():
@@ -89,3 +89,4 @@ def deleteProject(request, pk):
         return redirect('projects')
     context = {'object': project}
     return render(request, 'delete_template.html', context)
+

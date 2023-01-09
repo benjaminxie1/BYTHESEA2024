@@ -7,7 +7,7 @@
     <div class="container">
         <div class="layout">
             <div class="column column--1of3">
-                <h3 class="singleProject__subtitle">Tools & Stacks</h3>
+                <h3 class="singleProject__subtitle">Tags</h3>
                 <div class="singleProject__toolStack">
                     {% for tag in project.tags.all %}
                     <span class="tag tag--pill tag--sub tag--lg">
@@ -37,9 +37,19 @@
                 <a href="{% url 'user-profile' project.owner.id  %}"
                     class="singleProject__developer">{{project.owner.name}}</a>
                 <h2 class="singleProject__title">{{project.title}}</h2>
-                <h3 class="singleProject__subtitle">About the Project</h3>
+                <h3 class="singleProject__subtitle">About the Poster</h3>
                 <div class="singleProject__info">
-                    {{project.description}}
+                    <p><b><ins>Description:<ins></b> {{project.description}}</p>
+                    <br>
+                    <p><b><ins>Activity List:<ins></b> {{project.Activity_List}}</p>
+                    <br>
+                    <p><b><ins>Award List:<ins></b> {{project.Award_List}}</p>
+                    <br>
+                    <p><b><ins>SAT:<ins></b> {{project.SAT}}</p>
+                    <br>
+                    <p><b><ins>Unweighted GPA:<ins></b> {{project.UNWEIGHTED_GPA}}</p>
+                    <br>
+                    <p><b><ins>Weighted GPA:<ins></b> {{project.WEIGHTED_GPA}}</p>
                 </div>
                 <div class="comments">
                     <h3 class="singleProject__subtitle">Feedback</h3>

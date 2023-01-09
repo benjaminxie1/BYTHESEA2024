@@ -1,8 +1,8 @@
 from django.db import models
 import uuid
-
 from django.db.models.deletion import CASCADE
 from users.models import Profile
+from django.core.validators import MinValueValidator, MaxValueValidator
 # Create your models here.
 
 
@@ -10,11 +10,14 @@ class Project(models.Model):
     owner = models.ForeignKey(
         Profile, null=True, blank=True, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
-    description = models.TextField(null=True, blank=True)
     featured_image = models.ImageField(
         null=True, blank=True, default="default.jpg")
-    demo_link = models.CharField(max_length=2000, null=True, blank=True)
-    source_link = models.CharField(max_length=2000, null=True, blank=True)
+    description = models.CharField(max_length=2000, null=True, blank=True)
+    Activity_List = models.CharField(max_length=2000, null=True, blank=True)
+    Award_List = models.CharField(max_length=2000, null=True, blank=True)
+    SAT = models.IntegerField(default=0, null=True, blank=True, validators=[MinValueValidator(400), MaxValueValidator(1600)])
+    UNWEIGHTED_GPA = models.DecimalField(max_digits=3, decimal_places=2, default=0, null=True, blank=True, validators=[MaxValueValidator(4)])
+    WEIGHTED_GPA = models.DecimalField(max_digits=3, decimal_places=2, null=True, blank=True, default=0)
     tags = models.ManyToManyField('Tag', blank=True)
     vote_total = models.IntegerField(default=0, null=True, blank=True)
     vote_ratio = models.IntegerField(default=0, null=True, blank=True)

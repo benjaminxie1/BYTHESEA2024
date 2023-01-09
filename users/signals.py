@@ -20,7 +20,7 @@ def createProfile(sender, instance, created, **kwargs):
             name=user.first_name,
         )
 
-        subject = 'Welcome to DevSearch'
+        subject = 'Welcome to PeerReview'
         message = 'We are glad you are here!'
 
         send_mail(

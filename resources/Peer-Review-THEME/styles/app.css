@@ -1,5 +1,5 @@
 :root {
-  --color-sub: #002382;
+  --color-sub: #2d2d39;
 }
 
 .btn--sub {
@@ -843,20 +843,4 @@ img {
   color: var(--color-sub);
   margin-bottom: 1rem;
   margin-top: 2rem;
-}
-
-
-
-/*=======================
-  Fixed Position Alerts Wrapper
-========================*/
-
-.alert {
-  position: fixed;
-  left: 50%;
-  top: 120px;
-  transform: translate(-50%, -50%);
-
-
-  z-index: 99999;
 }
