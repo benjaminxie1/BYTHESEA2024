@@ -13,11 +13,6 @@ class Project(models.Model):
     featured_image = models.ImageField(
         null=True, blank=True, default="default.jpg")
     description = models.CharField(max_length=2000, null=True, blank=True)
-    Activity_List = models.CharField(max_length=2000, null=True, blank=True)
-    Award_List = models.CharField(max_length=2000, null=True, blank=True)
-    SAT = models.IntegerField(default=0, null=True, blank=True, validators=[MinValueValidator(400), MaxValueValidator(1600)])
-    UNWEIGHTED_GPA = models.DecimalField(max_digits=3, decimal_places=2, default=0, null=True, blank=True, validators=[MaxValueValidator(4)])
-    WEIGHTED_GPA = models.DecimalField(max_digits=3, decimal_places=2, null=True, blank=True, default=0)
     tags = models.ManyToManyField('Tag', blank=True)
     vote_total = models.IntegerField(default=0, null=True, blank=True)
     vote_ratio = models.IntegerField(default=0, null=True, blank=True)

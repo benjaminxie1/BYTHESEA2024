@@ -7,11 +7,9 @@ from .models import Project, Review
 class ProjectForm(ModelForm):
     class Meta:
         model = Project
-        fields = ['title', 'featured_image', 'description', 'Activity_List', 'Award_List', 'SAT',
-                  'UNWEIGHTED_GPA', 'WEIGHTED_GPA']
+        fields = ['title', 'featured_image', 'description']
         widgets = {
             'tags': forms.CheckboxSelectMultiple(),
-            'SAT': forms.NumberInput(attrs={'step': 10})
         }
 
     def __init__(self, *args, **kwargs):

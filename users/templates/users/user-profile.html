@@ -16,9 +16,6 @@
 
                         <p class="dev__location">Living in {{profile.location}}</p>
 
-                        <p class = "dream_university">Dream School: {{ profile.dream_School }}</p>
-                        <p class = "intended major">Dream Major: {{ profile.intended_Major }}</p>
-
                         {% if request.user.profile.id != profile.id %}
                         <a href="{% url 'create-message' profile.id %}" class="btn btn--sub btn--lg">Send Message </a>
                         {% endif %}
