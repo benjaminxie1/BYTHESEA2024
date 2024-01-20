@@ -5,6 +5,55 @@ from users.models import Profile
 from django.core.validators import MinValueValidator, MaxValueValidator
 # Create your models here.
 
+PLANT_CHOICES = [
+('african_violet', 'African Violet'),
+('asparagus', 'Asparagus'),
+('anthurium', 'Anthurium'),
+('balm', 'Balm'),
+('banana', 'Banana'),
+('basil', 'Basil'),
+('beans', 'Beans'),
+('beetroot', 'Beetroot'),
+('blueberry', 'Blueberry'),
+('broccoli', 'Broccoli'),
+('bromeliad', 'Bromeliad'),
+('brussel_sprout', 'Brussel Sprout'),
+('cabbage', 'Cabbage'),
+('capsicum', 'Capsicum'),
+('carrot', 'Carrot'),
+('cauliflower', 'Cauliflower'),
+('celery', 'Celery'),
+('chives', 'Chives'),
+('cucumber', 'Cucumber'),
+('roses', 'Roses'),
+('eggplant', 'Eggplant'),
+('endive', 'Endive'),
+('fennel', 'Fennel'),
+('garlic', 'Garlic'),
+('lavender', 'Lavender'),
+('leek', 'Leek'),
+('lettuce_fancy', 'Lettuce-Fancy'),
+('lettuce_head', 'Lettuce-Head'),
+('melons', 'Melons'),
+('mint', 'Mint'),
+('mustard_cress', 'Mustard/Cress'),
+('onion', 'Onion'),
+('parsley', 'Parsley'),
+('passion_fruit', 'Passion Fruit'),
+('pea', 'Pea'),
+('pumpkin', 'Pumpkin'),
+('radish', 'Radish'),
+('rhubarb', 'Rhubarb'),
+('roses', 'Roses'),
+('sage', 'Sage'),
+('spinach', 'Spinach'),
+('silver_beet', 'Silver-beet'),
+('squash', 'Squash'),
+('strawberry', 'Strawberry'),
+('thyme', 'Thyme'),
+('tomato', 'Tomato'),
+('turnip_parsnip', 'Turnip, Parsnip'),
+('watercress', 'Watercress'), ]
 
 class Project(models.Model):
     owner = models.ForeignKey(
@@ -13,7 +62,9 @@ class Project(models.Model):
     featured_image = models.ImageField(
         null=True, blank=True, default="default.jpg")
     description = models.CharField(max_length=2000, null=True, blank=True)
-    tags = models.ManyToManyField('Tag', blank=True)
+    crop = models.CharField(max_length= 50, choices=PLANT_CHOICES,  default='african_violet')
+    data = models.FileField(upload_to='static/uploads/', blank=True)
+    #tags = models.ManyToManyField('Tag', blank=True)
     vote_total = models.IntegerField(default=0, null=True, blank=True)
     vote_ratio = models.IntegerField(default=0, null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)

@@ -16,16 +16,8 @@
                 {% for field in form %}
                 <!-- Input:Text -->
                 <div class="form__field">
-                {% if field == form.Activity_List or field == form.Award_List %}
-                        <label for="formInput#text">{{field.label}}</label>
-                      <textarea for="formInput#text"{{ field }} </textarea>
-
-                    {% else %}
-
-                    <label for="formInput#text">{{field.label}}</label>
-                    {{field}}
+                    <label for="formInput#text">{{field.label}}</label> {{field}}
                 </div>
-                    {% endif %}
                 {% endfor %}
 
                 <div class="form__field">
@@ -33,11 +25,6 @@
                     <div class="project-tag tag tag--pill tag--main" data-tag="{{tag.id}}"
                         data-project="{{project.id}}">{{tag.name}} &#215;</div>
                     {% endfor %}
-                </div>
-
-                <div class="form__field">
-                    <label for="formInput#text">Tags</label>
-                    <textarea class="input" name="newtags" placeholder="Add crop name"></textarea>
                 </div>
                 <input class="btn btn--sub btn--lg  my-md" type="submit" value="Submit" />
             </form>
