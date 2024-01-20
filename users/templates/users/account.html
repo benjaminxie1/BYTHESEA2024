@@ -16,8 +16,6 @@
               <p class = "dev__username"> {{ profile.username }}</p>
             <p class="dev__title">{{profile.short_into}}</p>
             <p class="dev__location">Living in {{profile.location}}</p>
-              <p class = "dream_university"> Dream University: {{ profile.dream_School }}</p>
-           <p class="Intended Major"> Intended Major: {{ profile.intended_Major }}
 
           </div>
         </div>
@@ -26,12 +24,7 @@
         <div class="devInfo">
           <h3 class="devInfo__title">About Me</h3>
           <p class="devInfo__about">{{profile.bio}}</p>
-        </div>
-        <div class="settings">
-          <h3 class="settings__title">Interests(Colleges and skills)</h3>
-          <a class="tag tag--pill tag--sub settings__btn tag--lg" href="{% url 'create-skill' %}"><i
-              class="im im-plus"></i> Add Interest</a>
-        </div>
+
 
         <table class="settings__table">
           {% for skill in skills %}
@@ -54,9 +47,9 @@
         </table>
 
         <div class="settings">
-          <h3 class="settings__title">Posts</h3>
+          <h3 class="settings__title">Data</h3>
           <a class="tag tag--pill tag--sub settings__btn tag--lg" href="{% url 'create-project' %}"><i
-              class="im im-plus"></i> Add Post</a>
+              class="im im-plus"></i> Add Data</a>
         </div>
 
         <table class="settings__table">

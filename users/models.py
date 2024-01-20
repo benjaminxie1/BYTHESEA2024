@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 import uuid
+from django_countries.fields import CountryField
 # Create your models here.
 
 from django.db.models.signals import post_save, post_delete
@@ -13,13 +14,10 @@ class Profile(models.Model):
     name = models.CharField(max_length=200, blank=True, null=True)
     email = models.EmailField(max_length=500, blank=True, null=True)
     username = models.CharField(max_length=200, blank=True, null=True)
-    location = models.CharField(max_length=200, blank=True, null=True)
+    location = CountryField()
     short_intro = models.CharField(max_length=200, blank=True, null=True)
     bio = models.TextField(blank=True, null=True)
-    profile_image = models.ImageField(
-        null=True, blank=True, upload_to='profiles/', default="profiles/user-default.png")
-    intended_Major = models.CharField(max_length=200, blank=True, null=True)
-    dream_School = models.CharField(max_length=200, blank=True, null=True)
+    profile_image = models.ImageField(null=True, blank=True, upload_to='profiles/', default="profiles/user-default.png")
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True,
                           primary_key=True, editable=False)
