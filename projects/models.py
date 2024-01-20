@@ -64,6 +64,7 @@ class Project(models.Model):
     description = models.CharField(max_length=2000, null=True, blank=True)
     crop = models.CharField(max_length= 50, choices=PLANT_CHOICES,  default='african_violet')
     data = models.FileField(upload_to='static/uploads/', blank=True)
+    guess = models.FloatField(default=0.0, blank=True)
     #tags = models.ManyToManyField('Tag', blank=True)
     vote_total = models.IntegerField(default=0, null=True, blank=True)
     vote_ratio = models.IntegerField(default=0, null=True, blank=True)
